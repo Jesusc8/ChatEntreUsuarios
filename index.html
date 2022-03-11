@@ -1,0 +1,67 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <title>CHAT CFS</title> <!-- Titulo de la pestaña del explorador-->
+  <meta charset="utf-8"> <!-- el navegador conocera los caracteres mayuscula y minusculas que codifiquemos en el programa -->
+  <link rel="stylesheet" href="css/style.css" type="text/css" media="all"> <!--Referenciamos nuestra hoja de estilo en la caperta CSS-->
+</head>
+
+
+<body id="page1"> <!--Contenedor de todo la vista llamado page1-->
+  <div id="main-content"> <!--Contenedor Principal del Chat llamado main-content -->
+
+    <header> <!--La cabecera del programa-->
+      <div class="wrapper"><!--Envolutura del nombre y logo de la pagina-->
+        <img src="images/logo.png" alt="logo UCAB"><!-- Referencia de la carpeta donde se encuentra la imagen del Logo-->
+        <h1>UCAB group chat online</h1><!--Titulo del Chat-->
+      </div>
+    </header>
+    
+    <ul id="messages"></ul><!--Lista desordenadas de mensajes enviados y recibidos-->
+    
+    <form action=""><!--Formulario de requerimientos-->
+
+      <div class="inputs-content"><!--Contenedor de barras de texto salientes-->
+
+        <input id="u" autocomplete="off"  placeholder="Nickname"/> <!--Barra de texto del nombre del nombre del usuario-->
+        <input id="m" autocomplete="off"placeholder="Escribe un mensaje..." /><!--Barra de texto de mensajes salientes-->
+      </div>
+      <button>Enviar</button><!-- Boton de enviar mensaje-->
+      
+    </form>
+  </div>
+  <footer><!-- parte inferior de una estructura web en la que generalmente se incluyen links de navegación, enlaces de interés, copyright o botones a las redes sociales del site-->
+    <p>CFS Team. &copy;2019</p> <!--Equipo conformado CFS y el año realizado-->
+    <p> Contactenos: 0286-666 / 1911-2001</p><!--Numero de telefono del equipo-->
+  </footer>
+</body>
+
+<!--CLIENTE-->
+<script src="https://cdn.socket.io/socket.io-1.2.0.js"></script> 
+<script src="https://code.jquery.com/jquery-1.11.1.js"></script>
+<script>
+  $(function () {
+    var socket = io(); //Se le asigna a la variable Socket la funcion io()
+    $('form').submit(function () { //Despues de presionar el boton se envia transmite los datos al sevidor y luego a los otros usuarios
+      socket.emit('chat message', {//emite mensajes 
+        user: $('#u').val(),//
+        texto: $('#m').val()
+      });
+      $('#m').val('');
+      return false;
+    });
+    socket.on('chat message', function (msg) {
+      if (msg.user == $('#u').val()) {
+          $('#messages').append(`<div class="message-outcome"><div class="name">yo:</div>${msg.texto}`);
+          window.scrollTo(0, document.body.scrollHeight);
+      } else {
+        $('#messages').append(`<div class="message-income"><div class="name">${msg.user}:</div>${msg.texto}`);
+        window.scrollTo(0, document.body.scrollHeight);
+      }
+      window.scrollTo(0, document.body.scrollHeight);
+    });
+  });
+</script>
+
+</html>

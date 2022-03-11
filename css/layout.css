@@ -1,0 +1,14 @@
+.col1, .col2, .col3, .cols {float:left}
+.col1 {width:260px}
+.col2 {width:500px}
+.cols {width:200px}
+/* index.html */
+#page1 .box1 h2 {color:#972247;float:left;width:133px;padding:26px 0 0 30px}
+#page1 .col2 .cols {width:226px}
+
+#page1 #banner {background:url(../images/bg_banner.jpg) 0 0 no-repeat;height:365px}
+#page1 .text {padding:103px 0 0 60px}
+#page1 #content {padding-top:22px}
+/* index-1.html */
+#page2 .cols {width:220px}
+

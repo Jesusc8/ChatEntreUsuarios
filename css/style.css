@@ -1,0 +1,132 @@
+
+body{
+	height:  calc(100vh - 17px);
+	margin: 0;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	padding: 15px 0px 0px 0px;
+	background-color: #202124;
+}
+
+header {
+
+	display: flex;
+	justify-content: center;
+	align-items: center;
+
+}
+
+header img{
+	width: 75px;
+	height: 75px;
+}
+
+#main-content{
+
+	display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: calc(90% - 41px);
+    width: 40%;
+    margin: 0 0 20px 0;
+    background: #FFF;
+    border-radius: 10px;
+    padding: 30px;
+
+}
+
+#main-content form{
+	width: 100%;
+	display: flex;
+}
+#main-content button{
+	width: 15%;
+	margin: 0 5px;
+	border-radius: 5px;
+	border: 1px solid #BCC0C5;
+}
+#main-content button:hover{
+background-color: #a1a1a1; 
+}
+#main-content form .inputs-content{
+	width: 85%;
+}
+
+
+#main-content form input{
+	width: 100%;
+	border-radius: 5px;
+	height: 25px;
+    margin: 0;
+    border: 1px solid #a6a6a6;
+}
+
+ul#messages{
+	border-radius: 5px;
+	width: 100%;
+	height: 648px;
+	max-height: 648px;
+	overflow-y: auto;
+	background-color: #FFF;
+	border: 1.2px solid #BCC0C5;
+	padding: 0px;
+}
+
+.wrapper{
+	display: flex;
+	justify-content: space-between;
+	align-content: center;
+}
+.wrapper h1{
+
+	color: #333;
+	text-decoration: none;
+	text-transform: capitalize;
+	align-self: center;
+	margin: 0;
+	
+}
+
+footer{
+	display: flex;
+    height: 10%;
+    margin: 0px;
+    width: calc(100% - 10px);
+    background: #3C4042;
+    padding: 5px;
+    color: #fff;
+    justify-content: center;
+}
+
+footer p{
+	margin: 0px 10px;
+	display: inline-block;
+
+}
+
+div .message-outcome {
+	width: 60%;
+	border-radius: 15px;
+	background-color: #1da1ddbd;
+	color: white;
+	margin: 25px 25px 25px calc(40% - 25px);
+	padding: 8px 5px  8px 15px;
+	word-break: break-word;
+}
+
+div .message-income {
+	width: 60%;
+	border-radius: 15px;
+	background-color: #0c5425d4;
+	color: white;
+	margin: 25px 0px;
+	padding: 8px 5px  8px 15px;
+	word-break: break-word;
+}
+
+div .name {
+	text-decoration-line: underline;
+}
